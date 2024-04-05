@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #1E1E2C;
+            color: #F29F67;
+            width: 20%;
+            padding: 10px;
+            position: fixed;
+            height: 100%;
+            text-align: center;
+            overflow-y: auto;
+        }
+
+
+        .main-content  {
+            flex: 1;
+            padding: 20px;
+            margin-left: 21%; /* Adjust for the width of the sidebar */
+            background-color: bisque;
+            overflow-y: auto; /* Allow main content to scroll */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            margin: 10%;
+            padding: 30px;
+            width: max-content;
+        }
+
+        a:hover {
+            color: cyan;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #edit{
+            background-color: green;
+            color: white;
+            padding: 7px;
+            width: 70px;
+        }
+        #delete{
+            background-color: red;
+            color: white;
+            padding: 7px;
+            width: 70px;
+        }
+        button{
+            width: 100px;
+            padding: 7px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li><a href="#user-management">User Management</a></li>
+                <li><a href="#task-management">Task Management</a></li>
+                <li><a href="#elderly-management">Elderly Management</a></li>
+                <button onclick="logout()">Logout</button>
+
+            </ul>
+        </div>
+        <div class="main-content">
+            <section id="user-management">
+                <h2>User Management</h2>
+
+
+    
+
+    
+        <h2>User List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>EID</th>
+                    <th>Firstname</th>
+                    <th>LastName</th>
+                    <th>Action</th>
+                    <!-- Add more table headers as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <% volunteers.forEach(volunteer => { %>
+                    <tr>
+                        <td><%= volunteer.EID %></td>
+                        <td><%= volunteer.firstname %></td>
+                        <td><%= volunteer.lastname %></td>
+
+                        <td><button id="edit">Edit</button>||<button id="delete">Delete</button></td>
+                        
+                        <!-- Add more table cells for additional user data -->
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    
+
+                <!-- User management content goes here -->
+            </section>
+            <section id="task-management" class="hidden">
+                <h2>Task Management</h2>
+                <table border="1">
+                    <tr>
+                        <th>Task Id</th>
+                        <th>Task Name</th>
+                        <th>Elder ID</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>location</th>
+                    </tr>
+                    <!-- Task data -->
+                    <% tasks.forEach(task => { %>
+                        <tr>
+                            <td><%= task.taskId %></td> <!-- Assuming task._id is the unique identifier for each task -->
+                            <td><%= task.taskName %></td> <!-- Replace task.name with the appropriate property name for task name -->
+                            <td><%= task.elderlyId %></td> <!-- Replace task.elderId with the appropriate property name for elder ID -->
+                            <td><%= task.updatedAt %></td> <!-- Replace task.date with the appropriate property name for date -->
+                            <td><%= task.description %></td> <!-- Replace task.description with the appropriate property name for description -->
+                            <td><%= task.location %></td> <!-- Replace task.location with the appropriate property name for location -->
+                        </tr>
+                    <% }); %>
+                </table>
+                <!-- Task management content goes here -->
+            </section>
+            <section id="elderly-management" class="hidden">
+                <h2>Elderly Management</h2>
+                <!-- Elderly management content goes here -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>EID</th>
+                            <th>Firstname</th>
+                            <th>LastName</th>
+                            <th>Action</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% Elders.forEach(el => { %>
+                            <tr>
+                                <td><%= el.EID %></td>
+                                <td><%= el.firstname %></td>
+                                <td><%= el.lastname %></td>
+        
+                                <td><a id="edit">Edit</a>||<a id="delete">Delete</a></td>
+                                
+                                <!-- Add more table cells for additional user data -->
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const user = document.querySelector('a[href="#user-management"]');
+        const task = document.querySelector('a[href="#task-management"]');
+        const elder = document.querySelector('a[href="#elderly-management"]');
+        const usermanagement = document.getElementById('user-management');
+        const taskmanagement = document.getElementById('task-management');
+        const eldermanagement = document.getElementById('elderly-management');
+
+        user.addEventListener('click', function(event) {
+            event.preventDefault();
+            usermanagement.classList.remove('hidden');
+            taskmanagement.classList.add('hidden');
+            eldermanagement.classList.add('hidden');
+        });
+
+        task.addEventListener('click', function(event) {
+            event.preventDefault();
+            usermanagement.classList.add('hidden');
+            taskmanagement.classList.remove('hidden');
+            eldermanagement.classList.add('hidden');
+        });
+
+        elder.addEventListener('click', function(event) {
+            event.preventDefault();
+            usermanagement.classList.add('hidden');
+            taskmanagement.classList.add('hidden');
+            eldermanagement.classList.remove('hidden');
+        });
+
+
+        function logout() {
+            window.location.replace('admin/login.html');
+        }
+        window.onload = function()
+        {
+            alert('logged in successfully');
+        }
+
+        window.onclose = function()
+        {
+            alert('logged out successfully');
+        }
+    </script>
+</body>
+</html>

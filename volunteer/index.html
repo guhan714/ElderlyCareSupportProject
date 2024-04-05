@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .home-nav a:active {
+            /* For example, change the text color */
+            border-bottom: 3px solid cyan;
+        }
+        body{
+            font-size: 20px;
+            background-color: burlywood;
+        }
+        .home-header {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: black;
+            padding: 10px 20px; /* Added padding */
+        }
+
+        .home-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .home-nav a {
+            text-decoration: none;
+            margin-left: 25px;
+            color: whitesmoke;
+        }
+
+        .home-nav a:hover{
+            animation-name: color-animation;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        .home-image {
+            width: 150px;
+            height: 70px;
+            margin-right: 15px;
+        }
+        .just{
+            text-align: justify;
+        }
+        #about {
+            padding: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: center; /* Center align */
+            margin-bottom: 20px; /* Add margin bottom to create space */
+        }
+        .home-container2 p{
+            text-align:justify;
+        }
+        .home-container2 {
+            flex: 1; /* Take remaining space */
+            margin: auto;
+            margin-bottom: 30px;
+            max-width: 800px; /* Adjust the max-width as needed */
+        }
+
+
+        p {
+            border: none;
+            width: auto;
+            max-width: fit-content;
+            height: 3em;
+            padding: 7px;
+            border-radius: 3px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        /* Added styles for data box */
+        #services {
+     /* Adjust the minmax values to change the column width */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 7px;
+            
+     /* Reduce the gap between columns */
+    padding: 10px; /* Reduce the padding */
+    margin-top: auto; /* Added margin top */
+            
+    /* Clear floated elements */
+}
+
+    @keyframes border2-animation{
+        0%{
+            border: 1px solid brown;
+        }
+        50%{
+            border: 1px solid black;
+        }
+        100%{
+            border: 1px solid white;
+        }
+    }
+
+    dl{
+        background-color: transparent;
+        border-radius: 7px;
+        padding: 3%;
+    }
+       
+        img{
+            border-radius: 10px;
+        }
+        img:hover{
+            filter: brightness(50%);
+        }
+        table{
+            table-layout: fixed;
+            width: auto;
+            float: center;
+        }
+
+       td{
+        padding-top: 3%;
+        text-align: center;
+       }
+       @keyframes color-animation{
+        0%{
+            color: brown;
+        }
+        50%{
+            color:cadetblue;
+        }
+        100%{
+            color: chocolate;
+        }
+       }
+
+       dl:hover{
+        transform: scale(1.01);
+        transition-timing-function: ease;
+       }
+       footer{
+        background-color: black;
+        text-align: center;
+        padding: 1%;
+        margin: none;
+        color: whitesmoke;
+       }
+         
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+
+        @keyframes border-animation{
+            0%{
+                border-radius: 10%;
+            }
+            25%{
+                border-radius: 20%;
+            }
+            50%{
+                border-radius: 30%;
+            }
+            75%{
+                border-radius: 40%;
+            }
+            100%{
+                border-radius: 50%;
+            }
+        }
+       .service{
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        border-radius: 10px;  
+    } 
+       .service img{
+        width: 300px;
+        height: 300px;
+        animation-name: border-animation;
+        animation-timing-function: 3s linear ease-in-out;
+        animation-delay: 1s;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+       }
+    </style>
+</head>
+<body>
+    <div class="home-container">
+        <header data-role="Header" class="home-header">
+            <div class="home-nav">
+                <img
+                    alt="logo"
+                    src="logoelder.jpeg"
+                    class="home-image"
+                    width="150px"
+                    height="70px"
+                    id="logo"
+                />
+                <nav class="navigation-links-nav navigation-links-root-class-name10">
+                    <a href="#about">About</a>
+                    <a href="#moto">Moto</a>
+                    <a href="#services">Services</a>
+                    <a href="#charges">Charges</a>
+                    <a href="#contact">Contact</a>
+                    <a href="login.html">Login</a>
+                    <a href="registration.html">Register</a>
+                </nav>
+            </div>
+        </header>
+        <div id="about">
+            <div class="home-container2">
+                <h1 class="home-text">
+                    <h1>Help the elder people and reunite the generations.</h1>
+                </h1>
+                <p>The Elderly Care Support Site is a compassionate platform dedicated to enhancing the well-being of seniors and fostering intergenerational connections. We provide a range of services and resources tailored to meet the unique needs of elderly individuals, empowering them to lead fulfilling lives. Our mission is to inspire volunteers to become integral parts of transforming lives, creating moments of joy, and building a community where every senior feels valued and supported. Together, we strive to make a meaningful difference in the lives of seniors and their families, fostering a brighter, more compassionate world for all.     </p>       </div>
+            
+        </div>
+    </div>
+    
+    <!-- Data Box Section -->
+    
+
+    <h1>The sevices we provide</h1>
+
+    <div id="services">
+        <div class="service">
+            <img src="login1.jpeg" alt="">
+            <br>
+            <p>Companionship</p>
+        </div>
+        
+        <div class="service">
+            <img src="logoelder.jpeg" alt="">
+            <br>
+            <p>Meal Preparation</p>
+        </div>
+        
+        <div class="service">
+            <img src="logoelder.jpeg" alt="">
+            <br>
+            <p>Housekeeping</p>
+        </div>
+        <div class="service">
+            <img src="logoelder.jpeg" alt="">
+            <br>
+            <p>Transportation Assistance</p>
+        </div>
+        <div class="service">
+            <img src="logoelder.jpeg" alt="">
+            <br>
+            <p>Personal Care (ADLs)</p>
+        </div>
+        <div class="service">
+            <img src="logoelder.jpeg" alt="">
+            <br>
+            <p>Exercise Assistance</p>
+        </div>
+        
+            
+    </div>
+      
+
+
+<div id="charges">
+<h2>Elderly Care Support Services Prices (INR)</h2>
+
+<table>
+  <tr>
+    <th>Service</th>
+    <th>Price (per hour/day/month)</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Companionship</td>
+    <td class="price">₹500/hour</td>
+    <td>Providing companionship, conversation, and emotional support for elderly individuals, either in person or through virtual platforms.</td>
+  </tr>
+  <tr>
+    <td>Meal Preparation</td>
+    <td class="price">₹750/hour</td>
+    <td>Assistance with meal planning and preparation, ensuring nutritious and balanced meals for seniors.</td>
+  </tr>
+  <tr>
+    <td>Housekeeping</td>
+    <td class="price">₹1000/hour</td>
+    <td>Light housekeeping tasks such as vacuuming, dusting, laundry, and organizing living spaces to ensure a clean and safe environment.</td>
+  </tr>
+  <tr>
+    <td>Transportation Assistance</td>
+    <td>₹1250/hour</td>
+    <td>Providing transportation services for seniors to medical appointments, grocery shopping, social outings, or other errands.</td>
+  </tr>
+  <tr>
+    <td>Personal Care (ADLs)</td>
+    <td>₹1500/hour</td>
+    <td>Assistance with activities of daily living (ADLs) such as bathing, dressing, grooming, toileting, and mobility support.</td>
+  </tr>
+  <tr>
+    <td>Medication Reminders</td>
+    <td>₹100/hour</td>
+    <td>Providing reminders to take medications on time, organizing pill schedules, and coordinating with healthcare providers for prescription refills.</td>
+  </tr>
+  <tr>
+    <td>Exercise Assistance</td>
+    <td>₹800/hour</td>
+    <td>Assistance with physical exercises and fitness routines tailored to the elderly individual's needs and abilities.</td>
+  </tr>
+  <tr>
+    <td>Errands and Grocery Shopping</td>
+    <td>₹900/hour</td>
+    <td>Running errands and grocery shopping on behalf of the elderly individual, ensuring they have access to essential items.</td>
+  </tr>
+  <tr>
+    <td>Home Safety Checks and Modifications</td>
+    <td>₹1200/hour</td>
+    <td>Conducting safety assessments of the home environment and implementing necessary modifications to enhance safety and accessibility.</td>
+  </tr>
+  <tr>
+    <td>Technology Assistance</td>
+    <td>₹700/hour</td>
+    <td>Assistance with using smartphones, tablets, computers, or other technological devices to stay connected, access information, or engage in leisure activities.</td>
+  </tr>
+  <tr>
+    <td>Recreational Activities and Social Outings</td>
+    <td>₹850/hour</td>
+    <td>Organizing recreational activities and outings to promote socialization, engagement, and enjoyment for elderly individuals.</td>
+  </tr>
+  <tr>
+    <td>Memory Care Activities</td>
+    <td>₹1100/hour</td>
+    <td>Specialized activities and exercises designed to stimulate memory and cognitive function for individuals with dementia or Alzheimer's disease.</td>
+  </tr>
+  <tr>
+    <td>Respite Care for Family Caregivers</td>
+    <td>₹1300/hour</td>
+    <td>Temporary caregiving services provided to give family caregivers a break from their caregiving responsibilities, allowing them to recharge and attend to their own needs.</td>
+  </tr>
+  <tr>
+    <td>End-of-Life Support and Palliative Care</td>
+    <td>₹1800/hour</td>
+    <td>Compassionate care and support provided to individuals with terminal illnesses, focusing on pain management, comfort, and emotional support for both the patient and their loved ones.</td>
+  </tr>
+  <tr>
+    <td>Emotional Support and Counseling</td>
+    <td>₹950/hour</td>
+    <td>Professional counseling services and emotional support provided to address feelings of anxiety, depression, grief, or other mental health issues in elderly individuals.</td>
+  </tr>
+  <tr>
+    <td>Rehabilitation Services</td>
+    <td>₹1400/hour</td>
+    <td>Assistance with physical therapy, occupational therapy, and speech therapy to help elderly individuals regain or improve their functional abilities after illness, injury,
+</td>
+  </tr>
+  </table>
+</div>
+        <footer>&copy; EldeyCareSupport All rights reserved.</footer>
+    <script>
+        // Smooth scroll functionality
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substr(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+                                

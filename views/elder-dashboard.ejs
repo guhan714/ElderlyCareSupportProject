@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #1E1E2C;
+            color: #F29F67;
+            width: 20%;
+            padding: 10px;
+            position: fixed;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .main-content  {
+            flex: 1;
+            padding: 20px;
+            margin-left: 21%; /* Adjust for the width of the sidebar */
+            background-color: bisque;
+            overflow-y: auto; /* Allow main content to scroll */
+        }
+        
+
+        table {
+            table-layout: fixed;
+            border-collapse: collapse;
+
+            border: 1px solid black;
+            width: 100%;
+        }
+
+        td {
+            padding: 3%;
+        }
+
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+            padding: 3px;
+            
+        }
+
+        li {
+            list-style-type: none;
+            margin: 3%;
+            padding: 3%;
+        }
+
+        /* Hide profile, tasks, and payment by default */
+        #profile, #task, #Payment {
+            display: none;
+        }
+
+        .img1 {
+            border-radius: 50%;
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: center; /* Align items vertically */
+        }
+
+        p {
+            font-weight: bold;
+            animation-name: flip;
+        }
+
+        nav {
+            display: flex;
+            background-color: #1E1E2C;
+            margin: none;
+        }
+
+        button {
+            padding: 3%;
+        }
+        form{ 
+            flex-wrap: nowrap;
+            text-align: justify;
+            width: 90%;
+        }
+        .form-group{
+            padding: 3px;
+        }
+        input , textarea, select , option{
+            width: 100%;
+            padding: 7px;
+            font-style: 'times new roman';
+        }
+        .form-container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="container">
+        <div class="sidebar">
+            <span class="logo-text">
+                <img src="volunteer/logoeldery.jpg" alt="img" width="100px" height="100px" class="img1">
+                <p>Elderly Care Support</p>
+            </span>
+            <ol>
+                <li>
+                    <a href="#dashboard" id="dashboard-link">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#profile" id="profile-link">Profile</a>
+                </li>
+                <li>
+                    <a href="#task" id="task-link">Tasks</a>
+                </li>
+                <li>
+                    <a href="#Payment" id="payment-link">Payment</a>
+                </li>
+                <li>
+                    <button onclick="logout()">Logout</button>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <nav>
+                <p>.</p>
+                <p>.</p>
+                <p>.</p>
+            </nav>
+            <div id="dashboard">
+                <h1>Hi <%= result.firstname %> <%= result.lastname %></h1>
+                
+                <div>
+                    <dl>
+                        <dt>Welcome</dt>
+                        <dd>Total Tasks : <p> <%= tk %></p></dd>
+                    </dl>
+                
+                    <dl>
+                        <dt>To</dt>
+                        <dd>Process</dd>
+                    </dl>
+                </div>
+                </div>
+                <div id="profile">
+                <div class="flex"><h1>Profile Content</h1>
+                    <img src="data:image/jpeg;base64,<%= base64Image %>" alt="Profile Picture" width="150px" height="150px"></td>
+                    </div>
+                    
+                <table border="1">
+                    <tr>
+                        <th>Particulars</th>
+                        <th>Data</th>
+                    </tr>
+                    <tr>
+                        <td>Edler Id</td>
+                        <td><%= result.EID %></td>
+                    </tr>
+                    <tr>
+                        <td>First Name</td>
+                        <td><%= result.firstname %></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td><%= result.lastname %></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><%= result.email %></td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth</td>
+                        <td><%= result.dob %></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td><%= result.gender %></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Gender</td>
+                        <td><%= result.gender %></td>
+                    </tr>
+                    <tr>
+                        <td>Door No</td>
+                        <td><%= result.door_no %></td>
+                    </tr>
+                    <tr>
+                        <td>Area</td>
+                        <td><%= result.area %></td>
+                    </tr>
+                    <tr>
+                        <td>Zip Code</td>
+                        <td><%= result.Zip %></td>
+                    </tr>
+                    <tr>
+                        <td>District</td>
+                        <td><%= result.location %></td>
+                    </tr>
+                    <tr>
+                        <td>State</td>
+                        <td><%= result.State %></td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td><%= result.Country %></td>
+                    </tr>
+                    <tr>
+                        <td>Interests</td>
+                        <td><%= result.interests %></td>
+                    </tr>
+                    <tr>
+                        <td>Occupation</td>
+                        <td><%= result.occupation %></td>
+                    </tr>
+                    <tr>
+                        <td>Experience</td>
+                        <td><%= result.experience %></td>
+                    </tr>
+                
+                     <tr>
+                        <td>Interests</td>
+                        <td><%= result.interests %></td>
+                    </tr>
+                </table>
+                </div>
+                
+                <div id="task">
+                <marquee behavior="alternate" direction="right">Task Content</marquee>
+                <table border="1">
+                    <tr>
+                        <th>Task Id</th>
+                        <th>Task Name</th>
+                        <th>Elder ID</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>location</th>
+                    </tr>
+                    <!-- Task data -->
+                    <% tasks.forEach(task => { %>
+                        <tr>
+                            <td><%= task.taskId %></td> <!-- Assuming task._id is the unique identifier for each task -->
+                            <td><%= task.taskName %></td> <!-- Replace task.name with the appropriate property name for task name -->
+                            <td><%= task.elderlyId %></td> <!-- Replace task.elderId with the appropriate property name for elder ID -->
+                            <td><%= task.updatedAt %></td> <!-- Replace task.date with the appropriate property name for date -->
+                            <td><%= task.description %></td> <!-- Replace task.description with the appropriate property name for description -->
+                            <td><%= task.location %></td> <!-- Replace task.location with the appropriate property name for location -->
+                        </tr>
+                    <% }); %>
+                </table>
+                <div>
+                <p>Hello <%= tk %></p>
+                </div>
+                
+                <div id="newtask">
+                    <div class="form-container">
+        
+                        <form action="/posteldertask" class="taskcreation" method="post">
+                            <h1>Post your tasks right here</h1>
+                            <div class="form-group">
+                                <input type="text" name="elderlyId" value="<%= result.EID %>" readonly>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="taskname" placeholder="Task Name" required>
+                                <p id="error_message" style="display: none;"></p>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="description" id="description" cols="30" rows="10" placeholder="Description" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <select name="typeofcare" id="caretype" required>
+                                    <option value="">Select the type of Care you need</option>
+                                    <option value="Home-Assistance">Home Assistance</option>
+                                    <option value="Care-Assistance">Care Assistance</option>
+                                    <option value="Companionship-Assistance">Companionship Assistance</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select name="preferredschedule" id="schedule" required>
+                                    <option value="">Select the preferred schedule</option>
+                                    <option value="Morning">Morning</option>
+                                    <option value="Afternoon">Afternoon</option>
+                                    <option value="Evening">Evening</option>
+                                    <option value="Full day">Full day</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="location" placeholder="Location" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" name="durationOfCare" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="preferredgender" id="gender" required>
+                                    <option value="">Select the preferred gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Any">Any</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="languageRequirements" placeholder="Language Requirements">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="additionalInformation" placeholder="Additional Information">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="deadline" placeholder="Deadline" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit">Post</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                
+                </div>
+                
+                </div>
+                
+                <div id="Payment">
+                <marquee behavior="alternate" direction="right">Payment Content</marquee>
+                <table border="1">
+                    <tr>
+                        <th>Particulars</th>
+                        <th>Data</th>
+                    </tr>
+                    <!-- Payment data -->
+                </table>
+                </div>
+    </div>
+
+    <script>
+        // Get references to sidebar links and content divs
+        const dashboardLink = document.querySelector('#dashboard-link');
+        const profileLink = document.querySelector('#profile-link');
+        const taskLink = document.querySelector('#task-link');
+        const paymentLink = document.querySelector('#payment-link');
+        const dashboardContent = document.getElementById('dashboard');
+        const profileContent = document.getElementById('profile');
+        const taskContent = document.getElementById('task');
+        const paymentContent = document.getElementById('Payment');
+
+        dashboardLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            profileContent.style.display = 'none';
+            dashboardContent.style.display = 'block';
+        });
+
+        profileLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            taskContent.style.display = 'none';
+            paymentContent.style.display = 'none';
+            dashboardContent.style.display = 'none';
+            profileContent.style.display = 'block';
+        });
+
+        taskLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            profileContent.style.display = 'none';
+            paymentContent.style.display = 'none';
+            dashboardContent.style.display = 'none';
+            taskContent.style.display = 'block';
+        });
+
+        paymentLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            profileContent.style.display = 'none';
+            taskContent.style.display = 'none';
+            dashboardContent.style.display = 'none';
+            paymentContent.style.display = 'block';
+        });
+
+        function logout() {
+            this . close();
+            window.location.replace('ElderlyUser/login.html');
+            
+        }
+        
+    // Display an alert message when the page loads
+    window.onload = function() {
+        alert("Successfully Logged in!");
+    };
+
+    // You can also trigger alerts based on user actions, such as button click
+    window.onclose = function()
+    {
+        alert("logged out");
+    }
+
+    </script>
+</body>
+</html>

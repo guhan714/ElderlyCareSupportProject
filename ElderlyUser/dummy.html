@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            display:flex;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 0dvi;
+        }
+
+        .image-container {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .login-container {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .username {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="a.jpg" alt="sample picture">
+        </div>
+
+        <div class="login-container">
+            <form action="dummy.html">
+                <div class="username">
+                    <label for="username" id="user">Username</label>
+                    <input type="text" id="username" name="user">
+                </div>
+                <!-- Add other form elements as needed -->
+            </form>
+        </div>
+    </div>
+</body>
+</html>

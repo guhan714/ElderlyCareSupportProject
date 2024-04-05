@@ -1,0 +1,88 @@
+<!-- acknowledgment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Acknowledgment</title>
+    <style>
+        body{
+            background-color: rgb(226, 223, 223);
+        }
+        /* Style for the loader */
+        #loader {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            z-index: 100;
+            width: 100px;
+            height: 100px;
+            margin: -50px 0 0 -50px;
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Style for the success message */
+        #successMessage {
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        /* Style for the tick logo */
+        #tickLogo {
+            display: none;
+            width: 300px; /* Adjust the size as needed */
+            height: 300px;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(deg); }
+            100% { transform: rotate(360deg); }
+        }
+        button{
+            background-color:  rgb(39, 83, 230) ;
+            border: none;
+            color: whitesmoke;
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="loader"></div>
+    <img id="tickLogo" src="tick.jpg" alt="Tick Logo">
+    <div id="successMessage">Registration Successful! Thank you for registering.
+        <button onclick="redirect()">Login</button>
+
+    </div>
+
+    <script>
+
+        function redirect()
+        {
+            window.location.href = "login.html";
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // Show loader initially
+            document.getElementById('loader').style.display = 'block';
+
+            // Simulate some delay (you can replace this with actual loading logic)
+            setTimeout(function () {
+                // Hide loader after the delay
+                document.getElementById('loader').style.display = 'none';
+                // Show the success message
+                document.getElementById('successMessage').style.display = 'block';
+                // Show the tick logo
+                document.getElementById('tickLogo').style.display = 'block';
+            }, 2000); // Adjust the delay time as needed
+        });
+    </script>
+</body>
+</html>

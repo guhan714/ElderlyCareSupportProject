@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        .container {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 3%;
+            padding: 30px;
+            border: 1px solid black;
+            box-shadow: 1px 1px 3px 5px #999;
+            border-radius: 7px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between; /* Align columns to space between */
+        }
+
+        .col-6 {
+            flex: 0 0 calc(50% - 10px); /* Adjusting for gap between columns */
+            max-width: calc(50% - 10px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+        }
+
+        @media (max-width:450px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        marquee {
+            color: black;
+            font-weight: bold;
+            position: sticky;
+            background-image: url('a.png');
+        }
+    </style>
+    <script>
+        function val(input)
+        {
+            const inputValue = input.value.replace(/\D/g, '');
+
+            // Add a space after every 4 digits
+            const formattedValue = inputValue.replace(/(\d{4})/g, '$1 ').trim();
+
+            // Update the input value
+            input.value = formattedValue;
+        }
+    </script>
+</head>
+<body>
+    <marquee behavior="alternate" direction="left" style="color: black; height: 7dvh;padding: 1%; margin: 3%; border: 1px solid lightslategray;">Please fill correct data to access your content</marquee>
+    
+    <form id="myForm" action="/register" method="post" enctype="multipart/form-data">
+        <div class="container">
+            <div class="row">
+                <div class="form-group">
+                    <h1>Register</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="name-f">First Name</label>
+                        <input type="text" class="form-control" name="firstname" id="name-f" placeholder="Enter your first name." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="State">State</label>
+                        <input type="text" class="form-control" name="State" id="State" placeholder="Enter your state name." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Country">Country</label>
+                        <select class="form-control" name="Country" id="Country">
+                            <option value="India">India</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sex">Gender</label>
+                        <select id="sex" class="form-control" name="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="unspecified">Unspecified</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="aadhar">Aadhar Number</label>
+                        <input type="text" inputmode="numeric" id="aadhar" name="aadhar" pattern="\d{4} \d{4} \d{4}" placeholder="EX: 1111 1111 1111" oninput="val(this)">
+                    </div>
+                    <div class="form-group">
+                        <label for="mainloc">Main Location</label>
+                        <input type="text"  id="mainloc" name="location">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password"  name="password" id="password" required maxlength="16" required=>
+                    </div>
+                    <div class="form-group">
+                        <label for="em">Confirm Password</label>
+                        <input type="password"  id="conform-password" name="confirm_password" maxlength="16" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="name-l">Last name</label>
+                        <input type="text" class="form-control" name="lastname" id="name-l" placeholder="Enter your last name." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address-1">Address Line-1</label>
+                        <input type="address" class="form-control" name="door_no" id="address-1" placeholder="Locality/House/Street no." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address-2">Address Line-2</label>
+                        <input type="address" class="form-control" name="area" id="address-2" placeholder="Village/City Name." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">Postal-Code</label>
+                        <input type="zip" class="form-control" name="Zip" id="zip" placeholder="Postal-Code." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Date">Date Of Birth</label>
+                        <input type="Date" name="dob" class="form-control" id="Date" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Date">profilePicture</label>
+                        <input type="file" name="profilePicture" capture="environment" class="form-control" id="profilePicture"  placeholder="" required>
+                    </div>
+                    <!-- Additional fields for volunteers -->
+                    <div class="form-group">
+                        <label for="occupation">Occupation</label>
+                        <input type="text" class="form-control" name="occupation" id="occupation" placeholder="Enter your occupation.">
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Experience</label>
+                        <input type="text" class="form-control" name="experience" id="experience" placeholder="Enter your experience.">
+                    </div>
+                    <div class="form-group">
+                        <label for="interests">Interests</label>
+                        <input type="text" class="form-control" name="interests" id="interests" placeholder="Enter your interests.">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group mb-0">
+                        <input type="checkbox" class="form-check d-inline" id="chb" required>
+                        <label for="chb" class="form-check-label">&nbsp;I accept all terms and conditions.</label>
+                    </div>
+                </div>
+                <div class="col-12 form-group mb-0">
+                    <button class="btn btn-primary float-right">Submit</button>
+                </div>
+            </div>
+            
+        </div>
+    </form>
+
+    <script>
+        function val(input)
+        {
+            const inputValue = input.value.replace(/\D/g, '');
+
+            // Add a space after every 4 digits
+            const formattedValue = inputValue.replace(/(\d{4})/g, '$1 ').trim();
+
+            // Update the input value
+            input.value = formattedValue;
+        }
+    </script>
+</body>
+</html>

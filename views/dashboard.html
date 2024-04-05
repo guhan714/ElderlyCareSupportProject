@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        a{
+            text-decoration: none;
+            float: inline-start;
+            padding: 3px;
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 1%;
+            text-decoration: none;
+            height: 1.5em;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar-brand:hover,
+        .navbar-nav .nav-link:hover {
+            color: #ffffff;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="">Home</a>
+    <a href="">Profile</a>
+    <a href="">Communication</a>
+    <a href="">logout</a>
+</nav>
+
+<div class="container">
+    <h2 class="text-center mb-4">Volunteer Dashboard</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Profile Management</h5>
+                    <p class="card-text">View and update personal information.</p>
+                    <a href="#" class="btn btn-primary" onclick="goToProfile()">Go to Profile</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Task Browsing</h5>
+                    <p class="card-text">Explore and choose tasks posted by elderly users.</p>
+                    <a href="#" class="btn btn-primary" onclick="browseTasks()">Browse Tasks</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Task Management</h5>
+                    <p class="card-text">Accept, update status, and complete assigned tasks.</p>
+                    <a href="#" class="btn btn-primary" onclick="manageTasks()">Manage Tasks</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Communication</h5>
+                    <p class="card-text">Interact with elderly users and administrators.</p>
+                    <a href="#" class="btn btn-primary" onclick="goToMessages()">Go to Messages</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function goToProfile() {
+        // Add logic to navigate to the profile page
+        alert("Navigating to Profile page");
+        window.location.href="profile.html"
+    }
+
+    function browseTasks() {
+        // Add logic to navigate to the task browsing page
+        alert("Navigating to Task Browsing page");
+    }
+
+    function manageTasks() {
+        // Add logic to navigate to the task management page
+        alert("Navigating to Task Management page");
+    }
+
+    function goToMessages() {
+        // Add logic to navigate to the messages page
+        alert("Navigating to Messages page");
+    }
+</script>
+</body>
+</html>

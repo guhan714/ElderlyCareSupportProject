@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{ 
+            flex-wrap: nowrap;
+            text-align: justify;
+            width: 90%;
+        }
+        .form-group{
+            padding: 3px;
+        }
+        input , textarea, select , option{
+            width: 100%;
+            padding: 7px;
+            font-style: 'times new roman';
+        }
+        .form-container{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        
+        <form action="/posttask" class="taskcreation">
+            <h1>Post your tasks right here</h1>
+            <div class="form-group">
+                <input type="text" name="elderlyId" placeholder="Elder Id" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="taskname" placeholder="Task Name" oninput="validate(this)" required>
+                <p id="error message" style="display: none;"></p>
+            </div>
+            <div class="form-group">
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Description" required></textarea>
+            </div>
+            <div class="form-group">
+                <select name="typeofcare" id="caretype">
+                    <option value="">Select the type of Care you need</option>
+                    <option value="Home-Assisstance">Home Home-Assisstance</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select name="preferredschedule" id="caretype">
+                    <option value="">Select the time you need</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                    <option value="Full day">Full day</option>
+                </select>            
+             </div>
+            <div class="form-group">
+                <input type="text" name="location" placeholder="Location" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="durationOfCare" placeholder="Duration of Care" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="skillsAndQualifications" placeholder="Skills and Qualifications" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="languageRequirements" placeholder="Language Requirements">
+            </div>
+            <div class="form-group">
+                <select name="typeofcare" id="caretype">
+                    <option value="">Select the type of Care you need</option>
+                    <option value="Home-Assisstance">Home Home-Assisstance</option>
+                </select>            </div>
+            <div class="form-group">
+                <input type="text" name="additionalInformation" placeholder="Additional Information">
+            </div>
+            <div class="form-group">
+                <input type="text" name="deadline" placeholder="Deadline">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Post">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validate(input)
+        {
+            input.value = input.value.replace(/[^a-zA-Z]/g ,'');
+        }
+    </script>
+</body>
+</html>
